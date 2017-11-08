@@ -5,7 +5,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.List;
@@ -50,8 +52,34 @@ public class MyListAdapter extends BaseAdapter {
         }
 
         // get current item to be displayed
-        Item currentItem = (Item) getItem(position);
+        final Item currentItem = (Item) getItem(position);
 
+        Spinner spA = convertView.findViewById(R.id.spA);
+        Spinner spB = convertView.findViewById(R.id.spB);
+        spA.setSelection(0);
+        spB.setSelection(0);
+        spA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                currentItem.setSpA(adapterView.getItemAtPosition(i).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spB.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                currentItem.setSpB(adapterView.getItemAtPosition(i).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         // get the TextView for item name and item description
         TextView textViewItemName = convertView.findViewById(R.id.tvNumber);
 
