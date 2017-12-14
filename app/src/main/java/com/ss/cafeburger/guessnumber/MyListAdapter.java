@@ -56,8 +56,8 @@ public class MyListAdapter extends BaseAdapter {
 
         Spinner spA = convertView.findViewById(R.id.spA);
         Spinner spB = convertView.findViewById(R.id.spB);
-        //spA.setSelection(0);
-        //spB.setSelection(0);
+        spA.setSelection(0);
+        spB.setSelection(0);
         spA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
