@@ -10,7 +10,7 @@ public class Helper {
     /**
      * 將數值陣列裡的所有數值設為i值(初始化),如果該數本身有任二個位數相同,則移除(設為0)
      *
-     * @return
+     * @return 初始化後的數值陣列
      */
     public static int[] initNumberArray() {
         int[] numbers = new int[10000];

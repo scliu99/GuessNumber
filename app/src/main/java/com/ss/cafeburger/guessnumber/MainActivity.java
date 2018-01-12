@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.i(TAG, Helper.checkDupAB(n1, n2) + "");
     }
 
+    // 測試用
     private static void startGame2() {
         int[] numbers = Helper.initNumberArray();
         int computerGuessNumber = 0;
@@ -79,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         adapter = new MyListAdapter(this, items);
         listView.setAdapter(adapter);
-
 
         initGame();
         startGame();
